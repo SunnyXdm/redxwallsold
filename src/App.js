@@ -1,8 +1,13 @@
-import Card from "./Card"
+import Wallpapers from "./Wallpapers";
+
 function App() {
   return (
     <div>
-      <Card />
+    <div className="min-h-screen flex items-center">
+      <div className="flex-1 mx-auto p-10">
+        <Wallpapers />
+      </div>
+    </div>
     </div>
   );
 }
