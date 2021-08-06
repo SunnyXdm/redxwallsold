@@ -10,9 +10,10 @@ function Card({wall}) {
   console.log(wall);
   return (
     <div className="">
-      <img className="object-cover object-center h-full w-full" src={`${wall.preview}`} alt=""></img>
-      <div>
-        <div class="text-lg select-none text-black">Angry Bird</div>
+      <img className="object-cover object-center h-full w-full rounded shadow-xl" src={`${wall.preview}`} alt=""></img>
+      <div className="py-1">
+        <div className="text-lg select-none text-black">{wall.title}</div>
+        <div className="text-sm select-none text-black">by ~ {wall.author}</div>
       </div>
     </div>
   );
