@@ -12,8 +12,8 @@ function Card({wall}) {
     <div className="">
       <img className="object-cover object-center h-full w-full rounded shadow-xl" src={`${wall.preview}`} alt=""></img>
       <div className="py-1">
-        <div className="text-lg select-none text-black">{wall.title}</div>
-        <div className="text-sm select-none text-black">by ~ {wall.author}</div>
+        <div className="text-lg select-none text-black font-poppins font-semibold">{wall.title}</div>
+        <div className="text-sm select-none text-black font-poppins">by ~ {wall.author}</div>
       </div>
     </div>
   );
