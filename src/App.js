@@ -2,11 +2,25 @@ import Wallpapers from "./Wallpapers";
 import Header from "./Header";
 import TgProfilePic from "./TgProfilePic"
 import axios from "axios"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 function App() {
   const [walls, setWalls] = useState([])
   const [id, setId] = useState('')
+  
+  const observer = useRef()
+  // const lastPostRef = useCallback(node => {
+  //   console.log(node)
+  // })
+  //   if (loading) return
+  //   if (observer.current) observer.current.disconnect()
+  //   observer.current = new IntersectionObserver(entries => {
+  //     if (entries[0].isIntersecting) {
+  //       setPageNumber(prevPageNumber => prevPageNumber + 1)
+  //     }
+  //   })
+  //   if (node) observer.current.observe(node)
+  // }, [loading])
   
   useEffect(() => {
     const fetchItems = async () => {
@@ -32,7 +46,6 @@ function App() {
       //   }) : ''
       // });
       
-      console.log(resultData)
       setWalls(resultData)
       }
       fetchItems()
@@ -42,9 +55,10 @@ function App() {
     <div>
       <Header />
       <TgProfilePic />
+      
       <div className="min-h-screen flex items-center">
         <div className="flex-1 mx-auto p-4">
-          <Wallpapers data={walls} />
+          <Wallpapers data={walls}/>
         </div>
       </div>
     </div>

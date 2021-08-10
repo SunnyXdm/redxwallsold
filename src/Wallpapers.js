@@ -1,14 +1,16 @@
 import Card from "./Card"
-import axios from "axios"
-import { useState, useEffect } from 'react'
 
-function Wallpapers({ data }) {
+function Wallpapers({ data, lastPost }) {
   return (
     <>
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
-          {data.map((post) =>
-            <li className="">
-              <Card wall={post}/>
+          {data.map((post, index) =>
+            (data.length === index + 1) ?
+            <li key={post.id}>
+              <Card wall={post} lastWall={true}/>
+            </li> : 
+            <li key={post.id}>
+              <Card wall={post} lastWall={false}/>
             </li>
           )}
         </ul>
