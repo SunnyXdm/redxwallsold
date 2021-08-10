@@ -54,8 +54,6 @@ function App() {
   return (
     <div>
       <Header />
-      <TgProfilePic />
-      
       <div className="min-h-screen flex items-center">
         <div className="flex-1 mx-auto p-4">
           <Wallpapers data={walls}/>
