@@ -1,5 +1,4 @@
-// id={item.data.id}
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useRef, useCallback } from 'react'
 
 function Card({wall, lastWall, loadMoreId, id}) {
   const observer = useRef()
