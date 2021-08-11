@@ -1,6 +1,5 @@
 import Wallpapers from "./Wallpapers";
 import Header from "./Header";
-import TgProfilePic from "./TgProfilePic"
 import axios from "axios"
 import { useState, useEffect} from 'react'
 
@@ -16,6 +15,8 @@ function App() {
       result.data.data.children.map((post) => (
         post.data.preview ? resultData.push({
           preview:post.data.preview.images[0].resolutions[3].url,
+          permalink:post.data.permalink,
+          url:post.data.url,
           title:post.data.title,
           author:post.data.author,
           ups:post.data.ups,
@@ -45,6 +46,8 @@ function App() {
       result.data.data.children.map((post) => (
         post.data.preview ? resultData.push({
           preview:post.data.preview.images[0].resolutions[3].url,
+          permalink:post.data.permalink,
+          url:post.data.url,
           title:post.data.title,
           author:post.data.author,
           ups:post.data.ups,
@@ -64,6 +67,9 @@ function App() {
         <div className="flex-1 mx-auto p-4">
           <Wallpapers data={walls} loadMoreId={setLoadMoreId} id={id}/>
         </div>
+      </div>
+      <div className="flex justify-center p-4">
+        <div style={{borderTopColor:"transparent"}} className="w-16 h-16 border-8 border-purple-700 border-solid rounded-full animate-spin"></div>
       </div>
     </div>
   );
