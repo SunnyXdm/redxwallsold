@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ReDxwalls",
+  "name": "A wallpapers app made in react powered by Reddit",
   "icons": [
     {
       "src": "favicon.ico",
